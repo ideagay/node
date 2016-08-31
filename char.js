@@ -1,7 +1,7 @@
 /**
  * Created by hyb on 16/8/31.
  */
-/**code*/
+
 var net = require('net');   //加载net模块
 var chartServer=net.createServer();  //创建一个服务
 var clientList=[]; //建立一个客户端数组
