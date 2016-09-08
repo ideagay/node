@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>websocket</title>
+    <script src="socket.io-1.4.5.js"></script>
+</head>
+<body>
+<h2>websocket</h2>
+<p id="web"></p>
+<p id="web1"></p>
+<script>
+    var socket=io.connect('http://192.168.18.105:9000');
+    socket.on('message',function (data) {
+        var web=document.getElementById('web');
+        web.innerText=data;
+    });
+    socket.on('news',function (data) {
+        var web=document.getElementById('web1');
+        web.innerText=data;
+        socket.emit('my','客户端发送');
+    })
+</script>
+</body>
+</html>
